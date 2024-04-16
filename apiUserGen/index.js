@@ -71,11 +71,12 @@ app.put('/updateUser/:id', async (req, res)=>{
     try{
         const id = req.params.id
         const { name, email, phone, password } = req.body;
+        const hashedPassword = await bcrypt.hash(password, 10);
         await User.findByIdAndUpdate({_id:id},{
             name: name,
             email: email,
             phone: phone,
-            password: password
+            password: hashedPassword
         })
         res.status(200).json('Usuário atualizado com sucesso');
     }catch (error) {
