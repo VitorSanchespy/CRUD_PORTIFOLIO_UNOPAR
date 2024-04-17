@@ -4,8 +4,8 @@ const User = require('./models/db');
 const bcrypt = require('bcryptjs');
 const app = express();
 app.use(express.json());
-// connect mongoDB
-mongoose.connect('mongodb://127.0.0.1:27017/ApiUserGen').then(() => {
+// connect mongoDB user: 6yLDfo1Fggdk5bPm
+mongoose.connect('mongodb+srv://6yLDfo1Fggdk5bPm:6yLDfo1Fggdk5bPm@cluster0.2rhpafu.mongodb.net/?retryWrites=true&w=majority').then(() => {
     console.log('Conexão com o banco de dados estabelecida com sucesso.');
 }).catch((err) => {
     console.error('Erro ao conectar ao banco de dados:', err);
